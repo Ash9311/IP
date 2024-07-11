@@ -1,0 +1,93 @@
+const data = [
+  {
+    name: 'V',
+    parent: 'A',
+  },
+  {
+    name: 'G',
+    parent: 'C',
+  },
+  {
+    name: 'E',
+    parent: 'A',
+  },
+  {
+    name: 'Q',
+    parent: 'B',
+  },
+  {
+    name: 'A',
+    parent: 'root',
+  },
+  {
+    name: 'M',
+    parent: 'G',
+  },
+  {
+    name: 'B',
+    parent: 'C',
+  },
+  {
+    name: 'D',
+    parent: 'C',
+  },
+  {
+    name: 'N',
+    parent: 'Z',
+  },
+  {
+    name: 'X',
+    parent: 'V',
+  },
+  {
+    name: 'C',
+    parent: 'X',
+  },
+];
+
+output-
+// A
+//   E
+//   V  
+//     X   
+//       C
+//         G
+//           M
+//         B
+//           Q
+//         D
+
+const data = [
+  { name: 'V', parent: 'A' },
+  { name: 'G', parent: 'C' },
+  { name: 'E', parent: 'A' },
+  { name: 'Q', parent: 'B' },
+  { name: 'A', parent: 'root' },
+  { name: 'M', parent: 'G' },
+  { name: 'B', parent: 'C' },
+  { name: 'D', parent: 'C' },
+  { name: 'N', parent: 'Z' },
+  { name: 'X', parent: 'V' },
+  { name: 'C', parent: 'X' },
+];
+
+// Step 1: Build a map of node to children
+const childrenMap = {};
+data.forEach(item => {
+  if (!childrenMap[item.parent]) {
+    childrenMap[item.parent] = [];
+  }
+  childrenMap[item.parent].push(item.name);
+});
+
+// Step 2: Recursive function to print the tree
+function printTree(node, depth = 0) {
+  console.log(' '.repeat(depth * 2) + node);
+  const children = childrenMap[node];
+  if (children) {
+    children.forEach(child => printTree(child, depth + 1));
+  }
+}
+
+// Step 3: Find the root node and start printing
+printTree('A');
