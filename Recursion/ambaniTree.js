@@ -37,24 +37,24 @@ let data=[
             }
             ]
     }
-    
     ]
+
     let gen3=[];
-    function solve(data){
-        
+    function getGen3(data){
         for(let item of data){
-             
+              console.log(item.name)
         if(item.generation==3){
             gen3.push(item);
         }
        if(item.children && item.children.length>0){
-           solve(item.children);
+           getGen3(item.children);
        }
         }
-        
     }
-solve(data);
-    console.log(gen3);
+
+getGen3(data);
+console.log(gen3);
+
     
     
     
