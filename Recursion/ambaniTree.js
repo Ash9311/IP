@@ -1,43 +1,66 @@
-let data=[
+let data = [
   {
-  "name": "Dhirubhai Ambani",
-  "generation": 1,
-  "children": [
-    {
-      "name": "Mukesh Ambani",
-      "generation": 2,
-      "children": [
-        {
-          "name": "Akash Ambani",
-          "generation": 3,
-          "children": []
-        },
-        {
-          "name": "Ananth Ambani",
-          "generation": 3,
-          "children": []
-        },
-        {
-          "name": "Isha Ambani",
-          "generation": 3,
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Anil Ambani",
-      "generation": 2,
-      "children": [
-        {
-          "name": "Anmol Ambani",
-          "generation": 3,
-          "children": []
-        }
-      ]
-    }
-  ]
-}
-]
+    name: "Dhirubhai Ambani",
+    generation: 1,
+    children: [
+      {
+        name: "Mukesh Ambani",
+        generation: 2,
+        children: [
+          {
+            name: "Akash Ambani",
+            generation: 3,
+            children: [
+              {
+                name: "Prithvi Ambani",
+                generation: 4,
+                children: []
+              }
+            ]
+          },
+          {
+            name: "Ananth Ambani",
+            generation: 3,
+            children: []
+          },
+          {
+            name: "Isha Ambani",
+            generation: 3,
+            children: [
+              {
+                name: "Krishna Piramal",
+                generation: 4,
+                children: []
+              },
+              {
+                name: "Aadiya Piramal",
+                generation: 4,
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Anil Ambani",
+        generation: 2,
+        children: [
+          {
+            name: "Anmol Ambani",
+            generation: 3,
+            children: []
+          },
+          {
+            name: "Anshul Ambani",
+            generation: 3,
+            children: []
+          }
+        ]
+      },
+    ]
+  }
+];
+
 
     let gen3=[];
     function getGen3(data){
